@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Other files/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Other files/A Journey Awaits.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/Bg/bg1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Bg/bg2.png" type="Texture" id=5]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.789
+margin_top = 1.62148
+margin_right = 1.78906
+margin_bottom = 1.62146
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+modulate = Color( 0.627451, 0.478431, 0.180392, 1 )
+anchor_left = 0.355
+anchor_top = 0.825
+anchor_right = 0.622
+anchor_bottom = 0.959
+margin_left = 0.0319061
+margin_top = -0.196503
+margin_right = 0.239868
+margin_bottom = 0.22348
+custom_fonts/font = ExtResource( 2 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.226
+anchor_top = 0.085
+anchor_right = 0.755
+anchor_bottom = 0.33
+margin_left = -0.190994
+margin_top = -0.0983925
+margin_right = -0.279053
+margin_bottom = -0.0983887
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.192157, 0.117647, 0.0156863, 1 )
+text = "Game Name Here
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 0.5, 0.5 )
+transform = Transform2D( 0.5, 0, 0, 0.5, 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.9 )
+motion_mirroring = Vector2( 640, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.9 )
+motion_mirroring = Vector2( 640, 480 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 4 )
+centered = false
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Other files/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Dead.gd" type="Script" id=2]
+
+[node name="Dead" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 639.0
+margin_bottom = 477.0
+color = Color( 0.415686, 0.0431373, 0.0431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.698039, 0.788235, 0.564706, 1 )
+margin_left = 97.11
+margin_top = 329.88
+margin_right = 240.11
+margin_bottom = 381.88
+custom_fonts/font = ExtResource( 1 )
+text = "Home"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+modulate = Color( 0.698039, 0.788235, 0.564706, 1 )
+margin_left = 381.33
+margin_top = 331.069
+margin_right = 524.33
+margin_bottom = 383.069
+custom_fonts/font = ExtResource( 1 )
+text = "Retry"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 129.772
+margin_top = 75.5953
+margin_right = 336.772
+margin_bottom = 121.595
+rect_scale = Vector2( 1.92, 2.2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Health.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Tilesheet/colored_packed.png" type="Texture" id=2]
+
+[node name="Health" type="Node"]
+script = ExtResource( 1 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -35.9495
+margin_top = -69.2351
+margin_right = 280.051
+margin_bottom = 89.7649
+rect_scale = Vector2( 0.28, 0.0799997 )
+value = 87.0
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.776471, 0.141176, 0.141176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TextureProgress"]
+position = Vector2( -37.2565, 78.4164 )
+scale = Vector2( 7.34625, 28.0539 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 627.051, 163.51, 10.1829, 8.58583 )

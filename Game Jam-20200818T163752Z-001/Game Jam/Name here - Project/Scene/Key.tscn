@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Tilesheet/colored_transparent.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/key.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 19.4425, 12.353 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20.0223, 12.835 )
+
+[node name="Key" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.91034, 3.30957 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 544.237, 191.736, 15.2061, 8.41187 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

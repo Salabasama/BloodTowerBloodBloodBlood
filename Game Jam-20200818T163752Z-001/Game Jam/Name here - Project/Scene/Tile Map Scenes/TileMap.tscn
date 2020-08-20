@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Tilesheet/Brick_Stairs.png" type="Texture" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -105.616, -110.315, -105.315, 111.14, 106.916, 110.506, 105.649, -109.328 )
+
+[node name="Tile Map" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.00196075, -15.1025 )
+scale = Vector2( 150.219, 164.195 )
+texture = ExtResource( 1 )
+region_rect = Rect2( -0.530319, 31, 63.7735, 30.7713 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2( -13026.3, 791.032 )
+scale = Vector2( 45, 45 )
+occluder = SubResource( 2 )
